@@ -1,7 +1,8 @@
 "use client";
 
 import { FadeInSection } from "@/components/fade-in-section";
-import { Heart, ArrowUp } from "lucide-react";
+import { Heart, ArrowUp, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 export function FooterSection() {
   const scrollToTop = () => {
@@ -37,14 +38,25 @@ export function FooterSection() {
             <Heart className="w-4 h-4 text-rose-400" />
           </p>
 
-          {/* Back to top button */}
-          <button
-            onClick={scrollToTop}
-            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background/10 hover:bg-background/20 text-background text-sm transition-colors"
-          >
-            <ArrowUp className="w-4 h-4" />
-            Về đầu trang
-          </button>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            {/* Back to top button */}
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background/10 hover:bg-background/20 text-background text-sm transition-colors"
+            >
+              <ArrowUp className="w-4 h-4" />
+              Về đầu trang
+            </button>
+
+            {/* Chatbot AI button */}
+            <Link
+              href="/chat"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm transition-colors shadow-lg hover:shadow-xl"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Chatbot AI
+            </Link>
+          </div>
         </FadeInSection>
       </div>
     </footer>
