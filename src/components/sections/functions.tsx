@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeInSection, StaggerContainer, StaggerItem } from "@/components/fade-in-section";
-import { Baby, GraduationCap, Wallet, Heart, BookOpen, Scale } from "lucide-react";
+import { Baby, GraduationCap, Wallet, Heart } from "lucide-react";
 
 export function FunctionsSection() {
   const functions = [
@@ -9,58 +9,45 @@ export function FunctionsSection() {
       icon: Baby,
       title: "Tái sản xuất ra con người",
       color: "bg-rose-500",
-      description: "Chức năng đặc thù của gia đình, không một cộng đồng nào có thể thay thế. Đáp ứng nhu cầu tâm sinh lý tự nhiên, duy trì nòi giống của gia đình, dòng họ và nhu cầu về sức lao động, duy trì sự trường tồn của xã hội.",
+      description: "Chức năng đặc thù của gia đình, không một cộng đồng nào có thể thay thế. Đáp ứng nhu cầu tâm, sinh lý tự nhiên của con người, đáp ứng nhu cầu duy trì nòi giống của gia đình, dòng họ mà còn đáp ứng nhu cầu về sức lao động và duy trì sự trường tồn của xã hội.",
       details: [
-        "Thực hiện trong từng gia đình nhưng là vấn đề xã hội — quyết định mật độ dân cư và nguồn lực lao động của quốc gia và quốc tế.",
-        "Tùy nơi, phụ thuộc nhu cầu xã hội, chức năng được thực hiện theo xu hướng hạn chế hay khuyến khích (ví dụ kế hoạch hóa gia đình).",
-        "Trình độ phát triển kinh tế, văn hóa, xã hội ảnh hưởng đến chất lượng nguồn lao động mà gia đình cung cấp.",
+        "Quyết định mật độ dân cư và nguồn lực lao động",
+        "Phụ thuộc vào chính sách xã hội của Nhà nước",
+        "Ảnh hưởng bởi trình độ phát triển kinh tế, văn hóa, xã hội",
       ],
     },
     {
       icon: GraduationCap,
       title: "Nuôi dưỡng, Giáo dục",
       color: "bg-blue-500",
-      description: "Trách nhiệm nuôi dưỡng, dạy dỗ con cái trở thành người có ích cho gia đình, cộng đồng và xã hội. Những hiểu biết đầu tiên mà gia đình đem lại thường để lại dấu ấn sâu đậm và bền vững trong cuộc đời mỗi người.",
+      description: "Thể hiện tình cảm thiêng liêng, trách nhiệm của cha mẹ với con cái và trách nhiệm của gia đình với xã hội. Có ý nghĩa quan trọng đối với sự hình thành nhân cách, đạo đức, lối sống.",
       details: [
-        "Ảnh hưởng lâu dài và toàn diện từ lúc lọt lòng đến trưởng thành và tuổi già. Mỗi thành viên vừa là chủ thể vừa là khách thể trong nuôi dưỡng, giáo dục.",
-        "Giáo dục gia đình gắn liền với giáo dục xã hội. Cần tránh coi trọng giáo dục gia đình mà hạ thấp giáo dục xã hội hoặc ngược lại — cả hai khuynh hướng đều khiến cá nhân không phát triển toàn diện.",
-        "Thực hiện tốt chức năng này đòi hỏi cha mẹ phải có kiến thức cơ bản, tương đối toàn diện về văn hóa, học vấn, đặc biệt là phương pháp giáo dục.",
+        "Ảnh hưởng lâu dài và toàn diện đến cuộc đời mỗi thành viên",
+        "Mỗi thành viên vừa là chủ thể vừa là khách thể",
+        "Kết hợp với giáo dục xã hội để phát triển toàn diện",
       ],
     },
     {
       icon: Wallet,
       title: "Kinh tế và Tổ chức tiêu dùng",
       color: "bg-emerald-500",
-      description: "Gia đình tham gia trực tiếp vào sản xuất và tái sản xuất tư liệu sản xuất, tư liệu tiêu dùng, và là đơn vị duy nhất tái sản xuất ra sức lao động cho xã hội. Đồng thời là đơn vị tiêu dùng — tổ chức tiêu dùng hàng hóa để duy trì đời sống.",
+      description: "Gia đình tham gia trực tiếp vào quá trình sản xuất và tái sản xuất ra tư liệu sản xuất, tư liệu tiêu dùng, và là đơn vị duy nhất tái sản xuất ra sức lao động cho xã hội.",
       details: [
-        "Sử dụng hợp lý các khoản thu nhập vào đảm bảo đời sống vật chất và tinh thần của mỗi thành viên; sử dụng quỹ thời gian nhàn rỗi để tạo môi trường văn hóa lành mạnh, nâng cao sức khỏe, duy trì sở thích, sắc thái riêng của mỗi người.",
-        "Quy mô, sở hữu tư liệu sản xuất và cách thức tổ chức sản xuất, phân phối khác nhau tùy hình thức gia đình và giai đoạn phát triển xã hội.",
-        "Hiệu quả hoạt động kinh tế của gia đình quyết định hiệu quả đời sống vật chất và tinh thần của mỗi thành viên; đồng thời đóng góp vào sự giàu có của xã hội.",
+        "Đảm bảo nguồn sinh sống cho các thành viên",
+        "Đóng góp vào sự giàu có của xã hội",
+        "Tổ chức tiêu dùng hàng hóa để duy trì đời sống",
       ],
     },
     {
       icon: Heart,
-      title: "Thỏa mãn nhu cầu tâm sinh lý, duy trì tình cảm",
+      title: "Thỏa mãn nhu cầu tâm sinh lý",
       color: "bg-purple-500",
-      description: "Chức năng thường xuyên: thỏa mãn nhu cầu tình cảm, văn hóa, tinh thần; đảm bảo cân bằng tâm lý; bảo vệ chăm sóc sức khỏe người ốm, người già, trẻ em. Sự quan tâm, chăm sóc lẫn nhau vừa là nhu cầu tình cảm vừa là trách nhiệm, đạo lý, lương tâm.",
+      description: "Chức năng thường xuyên của gia đình, bao gồm việc thỏa mãn nhu cầu tình cảm, văn hóa, tinh thần cho các thành viên, đảm bảo sự cân bằng tâm lý.",
       details: [
-        "Gia đình là chỗ dựa tình cảm cho mỗi cá nhân, nơi nương tựa về mặt tinh thần chứ không chỉ vật chất.",
-        "Khi quan hệ tình cảm gia đình rạn nứt, quan hệ tình cảm trong xã hội cũng có nguy cơ bị phá vỡ. Duy trì tình cảm giữa các thành viên có ý nghĩa quyết định đến sự ổn định và phát triển của xã hội.",
+        "Bảo vệ chăm sóc sức khỏe người ốm, người già, trẻ em",
+        "Gia đình là chỗ dựa tình cảm cho mỗi cá nhân",
+        "Quyết định đến sự ổn định và phát triển của xã hội",
       ],
-    },
-    {
-      icon: BookOpen,
-      title: "Chức năng văn hóa",
-      color: "bg-amber-500",
-      description: "Gia đình là nơi lưu giữ truyền thống văn hóa của dân tộc, tộc người. Phong tục, tập quán, sinh hoạt văn hóa của cộng đồng được thực hiện trong gia đình. Gia đình vừa lưu giữ vừa sáng tạo và thụ hưởng những giá trị văn hóa của xã hội.",
-      details: [],
-    },
-    {
-      icon: Scale,
-      title: "Chức năng chính trị",
-      color: "bg-slate-600",
-      description: "Gia đình là một tổ chức chính trị của xã hội: nơi tổ chức thực hiện chính sách, pháp luật của nhà nước và quy chế (hương ước) của làng xã, đồng thời hưởng lợi từ hệ thống pháp luật, chính sách đó. Gia đình là cầu nối giữa nhà nước với công dân.",
-      details: [],
     },
   ];
 
@@ -76,7 +63,7 @@ export function FunctionsSection() {
           </h2>
           <div className="w-16 h-1 bg-accent mx-auto mb-8" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Sáu chức năng của gia đình: tái sản xuất con người, nuôi dưỡng-giáo dục, kinh tế và tổ chức tiêu dùng, thỏa mãn nhu cầu tâm sinh lý, văn hóa và chính trị — phản ánh vai trò không thể thay thế của gia đình trong xã hội
+            Bốn chức năng cơ bản phản ánh vai trò không thể thay thế của gia đình trong xã hội
           </p>
         </FadeInSection>
 
@@ -87,8 +74,8 @@ export function FunctionsSection() {
                 <div className={`h-2 ${item.color}`} />
                 <div className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-accent" />
+                    <div className={`w-12 h-12 rounded-xl ${item.color}/10 flex items-center justify-center flex-shrink-0`}>
+                      <item.icon className={`w-6 h-6 text-foreground`} />
                     </div>
                     <h3 className="font-serif text-xl font-semibold text-foreground pt-2">
                       {item.title}
@@ -99,16 +86,14 @@ export function FunctionsSection() {
                     {item.description}
                   </p>
 
-                  {item.details.length > 0 && (
-                    <ul className="space-y-3">
-                      {item.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-foreground/80">
-                          <span className={`w-1.5 h-1.5 rounded-full ${item.color} mt-2 flex-shrink-0`} />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="space-y-3">
+                    {item.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm text-foreground/80">
+                        <span className={`w-1.5 h-1.5 rounded-full ${item.color} mt-2 flex-shrink-0`} />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </StaggerItem>
