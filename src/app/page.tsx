@@ -6,6 +6,7 @@ import { FunctionsSection } from "@/components/sections/functions";
 import { FoundationSection } from "@/components/sections/foundation";
 import { ChangesSection } from "@/components/sections/changes";
 import { DirectionsSection } from "@/components/sections/directions";
+import { AcademicIntegritySection } from "@/components/sections/academic-integrity";
 import { FooterSection } from "@/components/sections/footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <FoundationSection />
         <ChangesSection />
         <DirectionsSection />
+        <AcademicIntegritySection />
         <FooterSection />
       </div>
     </main>

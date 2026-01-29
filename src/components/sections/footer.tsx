@@ -31,6 +31,7 @@ export function FooterSection() {
             <a href="#foundation" className="hover:text-background transition-colors">Cơ sở</a>
             <a href="#changes" className="hover:text-background transition-colors">Biến đổi</a>
             <a href="#directions" className="hover:text-background transition-colors">Phương hướng</a>
+            <a href="#academic-integrity" className="hover:text-background transition-colors">Liêm chính học thuật</a>
           </div>
 
           <p className="text-sm text-background/50 flex items-center justify-center gap-2">
