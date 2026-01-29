@@ -10,21 +10,33 @@ export function PositionSection() {
       title: "Tế bào của xã hội",
       quote: "\"Nhiều gia đình cộng lại mới thành xã hội, xã hội tốt thì gia đình càng tốt, gia đình tốt thì xã hội mới tốt. Hạt nhân của xã hội chính là gia đình.\"",
       author: "Chủ tịch Hồ Chí Minh",
-      description: "Gia đình có vai trò quyết định đối với sự tồn tại, vận động và phát triển của xã hội. Với việc sản xuất ra tư liệu tiêu dùng, tư liệu sản xuất, tái sản xuất ra con người, gia đình như một tế bào tự nhiên, là đơn vị cơ sở để tạo nên cơ thể xã hội.",
+      description: "Gia đình có vai trò quyết định đối với sự tồn tại, vận động và phát triển của xã hội. Với việc sản xuất ra tư liệu tiêu dùng, tư liệu sản xuất, tái sản xuất ra con người, gia đình như một tế bào tự nhiên, là đơn vị cơ sở để tạo nên cơ thể xã hội. Không có gia đình để tái tạo ra con người thì xã hội không thể tồn tại và phát triển được.",
+      details: [
+        "Theo Ăngghen: hai loại sản xuất quyết định trật tự xã hội — sản xuất tư liệu sinh hoạt và sản xuất ra bản thân con người (truyền nòi giống); trình độ phát triển của lao động và của gia đình quyết định xã hội.",
+        "Mức độ tác động của gia đình phụ thuộc vào bản chất chế độ xã hội, đường lối chính sách của giai cấp cầm quyền. Muốn xã hội lành mạnh phải quan tâm xây dựng tế bào gia đình tốt.",
+      ],
     },
     {
       icon: Home,
       title: "Tổ ấm của mỗi người",
       quote: "Gia đình là môi trường tốt nhất để mỗi cá nhân được yêu thương, nuôi dưỡng, chăm sóc, trưởng thành, phát triển.",
       author: "",
-      description: "Sự yên ổn, hạnh phúc của mỗi gia đình là tiền đề, điều kiện quan trọng cho sự hình thành, phát triển nhân cách, thể lực, trí lực để trở thành công dân tốt cho xã hội. Chỉ trong môi trường yên ấm của gia đình, cá nhân mới cảm thấy bình yên, hạnh phúc.",
+      description: "Từ khi còn nằm trong bụng mẹ đến lúc lọt lòng và suốt cuộc đời, mỗi cá nhân đều gắn bó chặt chẽ với gia đình. Sự yên ổn, hạnh phúc của mỗi gia đình là tiền đề cho sự hình thành, phát triển nhân cách, thể lực, trí lực để trở thành công dân tốt. Chỉ trong môi trường yên ấm của gia đình, cá nhân mới cảm thấy bình yên, hạnh phúc, có động lực phấn đấu trở thành con người xã hội tốt.",
+      details: [
+        "Gia đình mang lại các giá trị hạnh phúc, sự hài hòa trong đời sống cá nhân của mỗi thành viên.",
+        "Quan hệ tình cảm thiêng liêng, sâu đậm giữa vợ chồng, cha mẹ và con cái, anh chị em mà không cộng đồng nào có thể thay thế.",
+      ],
     },
     {
       icon: Link2,
       title: "Cầu nối với xã hội",
       quote: "Gia đình là cộng đồng xã hội đầu tiên mà mỗi cá nhân sinh sống, có ảnh hưởng rất lớn đến sự hình thành và phát triển nhân cách của từng người.",
       author: "",
-      description: "Gia đình là môi trường đầu tiên mà mỗi cá nhân học được và thực hiện quan hệ xã hội. Nhiều thông tin, hiện tượng của xã hội thông qua lăng kính gia đình mà tác động tích cực hoặc tiêu cực đến sự phát triển của mỗi cá nhân.",
+      description: "Gia đình là môi trường đầu tiên mà mỗi cá nhân học được và thực hiện quan hệ xã hội. Mỗi cá nhân vừa là thành viên gia đình vừa là thành viên xã hội. Gia đình cũng là cộng đồng để xã hội tác động đến cá nhân — nhiều thông tin, hiện tượng xã hội thông qua lăng kính gia đình tác động tích cực hoặc tiêu cực đến tư tưởng, đạo đức, lối sống, nhân cách.",
+      details: [
+        "Giai cấp cầm quyền muốn quản lý xã hội đều coi trọng việc xây dựng và củng cố gia đình. Trong CNXH: bảo vệ hôn nhân một vợ một chồng, bình đẳng trong gia đình, giải phóng phụ nữ.",
+        "Bác Hồ: \"Nếu không giải phóng phụ nữ là xây dựng chủ nghĩa xã hội chỉ một nửa.\" Quan hệ gia đình trong CNXH có đặc điểm khác về chất so với các chế độ trước.",
+      ],
     },
   ];
 
@@ -65,9 +77,19 @@ export function PositionSection() {
                         </footer>
                       )}
                     </blockquote>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed mb-4">
                       {item.description}
                     </p>
+                    {item.details && item.details.length > 0 && (
+                      <ul className="space-y-2 mt-4 border-t border-border/50 pt-4">
+                        {item.details.map((detail, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>

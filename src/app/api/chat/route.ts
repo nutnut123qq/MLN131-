@@ -1,4 +1,3 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
@@ -6,12 +5,10 @@ import path from "path";
 // Đọc nội dung từ file giaotrinh.txt
 const getTextbookContent = () => {
   try {
-    // Đường dẫn file trong thư mục family-education
     const filePath = path.join(process.cwd(), "giaotrinh.txt");
     if (fs.existsSync(filePath)) {
       return fs.readFileSync(filePath, "utf-8");
     }
-    // Thử đường dẫn khác nếu không tìm thấy (thư mục cha)
     const altPath = path.join(process.cwd(), "..", "giaotrinh.txt");
     if (fs.existsSync(altPath)) {
       return fs.readFileSync(altPath, "utf-8");
@@ -35,52 +32,78 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.BLACKBOX_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
-        { error: "GEMINI_API_KEY is not configured" },
+        { error: "BLACKBOX_API_KEY is not configured. Thêm API key vào file .env.local (lấy tại https://blackbox.ai/dashboard)" },
         { status: 500 }
       );
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
-
-    // Lấy nội dung giáo trình
     const textbookContent = getTextbookContent();
 
-    // Tạo system prompt với nội dung giáo trình
-    const systemPrompt = `Bạn là một trợ lý AI chuyên về chủ đề "VẤN ĐỀ GIA ĐÌNH TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI".
+    const systemPrompt = `Bạn là trợ lý AI chuyên về chủ đề "VẤN ĐỀ GIA ĐÌNH TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI" (theo quan điểm chủ nghĩa Mác-Lênin, tư tưởng Hồ Chí Minh và Đảng Cộng sản Việt Nam).
 
-Nhiệm vụ của bạn là chỉ trả lời các câu hỏi dựa trên nội dung giáo trình sau đây. Bạn KHÔNG được trả lời các câu hỏi ngoài phạm vi nội dung này. Nếu câu hỏi không liên quan đến nội dung giáo trình, hãy lịch sự từ chối và đề nghị người dùng hỏi về chủ đề trong giáo trình.
+Nhiệm vụ: Chỉ trả lời dựa trên nội dung giáo trình dưới đây. KHÔNG trả lời câu hỏi ngoài phạm vi này. Nếu câu hỏi không liên quan, lịch sự từ chối và gợi ý hỏi về chủ đề trong giáo trình.
 
 NỘI DUNG GIÁO TRÌNH:
 
 ${textbookContent}
 
-Hãy trả lời câu hỏi của người dùng một cách chính xác, chi tiết và dựa hoàn toàn vào nội dung giáo trình trên.`;
+Trả lời chính xác, chi tiết, bám sát giáo trình.`;
 
-    const prompt = `${systemPrompt}\n\nCâu hỏi của người dùng: ${message}\n\nTrả lời:`;
+    const response = await fetch("https://api.blackbox.ai/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "blackboxai/openai/gpt-5.1",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: message },
+        ],
+        temperature: 0.5,
+        max_tokens: 2048,
+        stream: false,
+      }),
+    });
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
+    if (!response.ok) {
+      const errData = await response.json().catch(() => ({}));
+      const errMsg = errData.error?.message || errData.message || response.statusText;
+      return NextResponse.json(
+        { error: errMsg || `Blackbox API lỗi: ${response.status}` },
+        { status: response.status }
+      );
+    }
+
+    const data = await response.json();
+    const text = data.choices?.[0]?.message?.content?.trim();
+
+    if (!text) {
+      return NextResponse.json(
+        { error: "Không nhận được phản hồi từ AI." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ response: text });
-  } catch (error: any) {
-    console.error("Error calling Gemini API:", error);
-    
-    // Kiểm tra lỗi API key bị suspended hoặc không hợp lệ
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Error calling Blackbox API:", err);
+
     let errorMessage = "Đã có lỗi xảy ra khi xử lý câu hỏi của bạn.";
-    
-    if (error.message?.includes("suspended") || error.message?.includes("403")) {
-      errorMessage = "API key Gemini đã bị đình chỉ hoặc không hợp lệ. Vui lòng kiểm tra lại API key trong file .env.local hoặc tạo API key mới tại https://makersuite.google.com/app/apikey";
-    } else if (error.message?.includes("401") || error.message?.includes("unauthorized")) {
-      errorMessage = "API key không hợp lệ. Vui lòng kiểm tra lại API key trong file .env.local.";
-    } else if (error.message) {
-      errorMessage = error.message;
+
+    if (err.message?.includes("401") || err.message?.includes("unauthorized")) {
+      errorMessage = "API key Blackbox không hợp lệ. Kiểm tra BLACKBOX_API_KEY trong .env.local hoặc tạo key tại https://blackbox.ai/dashboard";
+    } else if (err.message?.includes("403") || err.message?.includes("suspended")) {
+      errorMessage = "API key Blackbox bị từ chối hoặc đình chỉ. Kiểm tra key tại https://blackbox.ai/dashboard";
+    } else if (err.message) {
+      errorMessage = err.message;
     }
-    
+
     return NextResponse.json(
       { error: errorMessage },
       { status: 500 }

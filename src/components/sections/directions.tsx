@@ -10,28 +10,44 @@ export function DirectionsSection() {
       icon: Target,
       title: "Tăng cường sự lãnh đạo của Đảng",
       description: "Nâng cao nhận thức của xã hội về xây dựng và phát triển gia đình Việt Nam",
-      details: "Đẩy mạnh công tác tuyên truyền để các cấp ủy, chính quyền nhận thức sâu sắc về vị trí, vai trò và tầm quan trọng của gia đình. Đưa nội dung, mục tiêu của công tác xây dựng gia đình vào chiến lược phát triển kinh tế - xã hội.",
+      details: [
+        "Đẩy mạnh công tác tuyên truyền để các cấp ủy, chính quyền, các tổ chức đoàn thể từ trung ương đến cơ sở nhận thức sâu sắc về vị trí, vai trò và tầm quan trọng của gia đình và công tác xây dựng, phát triển gia đình Việt Nam hiện nay.",
+        "Coi đây là một trong những động lực quan trọng quyết định thành công sự phát triển bền vững kinh tế - xã hội trong thời kỳ công nghiệp hóa, hiện đại hóa đất nước, xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa.",
+        "Cấp ủy và chính quyền các cấp phải đưa nội dung, mục tiêu của công tác xây dựng và phát triển gia đình vào chiến lược phát triển kinh tế - xã hội và chương trình kế hoạch công tác hàng năm của các bộ, ngành, địa phương.",
+      ],
     },
     {
       number: "02",
       icon: TrendingUp,
       title: "Phát triển kinh tế - xã hội",
       description: "Nâng cao đời sống vật chất, kinh tế hộ gia đình",
-      details: "Xây dựng và hoàn thiện chính sách phát triển kinh tế - xã hội, có chính sách ưu tiên hỗ trợ cho các gia đình liệt sỹ, thương binh, dân tộc ít người, gia đình nghèo. Tạo điều kiện thuận lợi cho các hộ gia đình vay vốn, xóa đói giảm nghèo.",
+      details: [
+        "Xây dựng và hoàn thiện chính sách phát triển kinh tế - xã hội để góp phần củng cố, ổn định và phát triển kinh tế gia đình; có chính sách ưu tiên hỗ trợ phát triển kinh tế gia đình cho các gia đình liệt sỹ, thương binh bệnh binh, gia đình các dân tộc ít người, gia đình nghèo, gia đình đang sinh sống ở vùng sâu, vùng xa, vùng khó khăn.",
+        "Có chính sách kịp thời hỗ trợ các gia đình phát triển kinh tế, sản xuất kinh doanh các sản phẩm mới, sản phẩm sử dụng nguyên liệu tại chỗ, hỗ trợ các gia đình tham gia sản xuất phục vụ xuất khẩu.",
+        "Tích cực khai thác và tạo điều kiện thuận lợi cho các hộ gia đình vay vốn ngắn hạn và dài hạn nhằm xóa đói giảm nghèo, chuyển dịch cơ cấu sản xuất, mở rộng phát triển kinh tế, đẩy mạnh loại hình kinh tế trang trại, vươn lên làm giàu chính đáng.",
+      ],
     },
     {
       number: "03",
       icon: Sparkles,
       title: "Kế thừa và tiếp thu",
       description: "Kế thừa giá trị truyền thống, tiếp thu tiến bộ nhân loại",
-      details: "Xác định, duy trì những nét đẹp có ích của gia đình truyền thống; đồng thời tìm ra những hạn chế và khắc phục hủ tục. Xây dựng mô hình gia đình hiện đại, phù hợp với công nghiệp hóa, hiện đại hóa và hội nhập quốc tế.",
+      details: [
+        "Gia đình truyền thống được hun đúc từ lâu đời trong lịch sử dân tộc; bước vào thời kỳ mới bộc lộ cả mặt tích cực và tiêu cực. Cần xác định, duy trì những nét đẹp có ích; đồng thời tìm ra những hạn chế và tiến tới khắc phục những hủ tục của gia đình cũ.",
+        "Xây dựng gia đình Việt Nam hiện nay là xây dựng mô hình gia đình hiện đại, phù hợp với tiến trình công nghiệp hóa, hiện đại hóa đất nước và hội nhập kinh tế quốc tế.",
+        "Vừa kế thừa và phát huy những giá trị văn hóa truyền thống tốt đẹp của gia đình Việt Nam, vừa kết hợp với những giá trị tiên tiến của gia đình hiện đại để phù hợp với sự vận động phát triển tất yếu của xã hội.",
+      ],
     },
     {
       number: "04",
       icon: Award,
       title: "Phát triển phong trào Gia đình Văn hóa",
       description: "Nâng cao chất lượng phong trào xây dựng gia đình văn hóa",
-      details: "Gia đình văn hóa là gia đình ấm no, hòa thuận, tiến bộ, khỏe mạnh và hạnh phúc. Nghiên cứu, nhân rộng mô hình gia đình văn hóa trong thời kỳ công nghiệp hóa với những giá trị mới tiên tiến, đảm bảo nguyên tắc công bằng, dân chủ.",
+      details: [
+        "Gia đình văn hóa là mô hình tiến bộ, danh hiệu nhiều gia đình Việt Nam mong muốn hướng đến. Tiêu chí: gia đình ấm no, hòa thuận, tiến bộ, khỏe mạnh và hạnh phúc; thực hiện tốt nghĩa vụ công dân; thực hiện kế hoạch hóa gia đình; đoàn kết tương trợ trong cộng đồng dân cư.",
+        "Hình thành từ những năm 60 thế kỷ XX tại một địa phương của tỉnh Hưng Yên; đến nay đã trở thành phong trào thi đua có độ bao phủ hầu hết các địa phương. Phong trào tác động đến nền tảng gia đình với những quy tắc ứng xử tốt đẹp, phát huy giá trị đạo đức truyền thống; chất lượng cuộc sống gia đình ngày càng được nâng cao.",
+        "Cần tránh xu hướng chạy theo thành tích, phản ánh không thực chất phong trào và chất lượng gia đình văn hóa. Tiêu chí xây dựng gia đình văn hóa phải phù hợp và có ý nghĩa thiết thực với đời sống nhân dân; công tác bình xét danh hiệu phải theo tiêu chí thống nhất, nguyên tắc công bằng, dân chủ, đáp ứng nguyện vọng, tạo sự đồng tình hưởng ứng của nhân dân.",
+      ],
     },
   ];
 
@@ -74,9 +90,14 @@ export function DirectionsSection() {
                     {item.description}
                   </p>
 
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {item.details}
-                  </p>
+                  <ul className="space-y-3 text-muted-foreground leading-relaxed text-sm">
+                    {item.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </StaggerItem>
